@@ -18,10 +18,10 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           config: ${{ secrets.CONFIG }}
 
-      - name: Set enviroments of SSH
+      - name: Create environment of SSH
         run: "echo -e \"\
           PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\
-          \" > ~/.ssh/enviroment"
+          \" > ~/.ssh/environment"
 
       - name: Update bot
         run: ssh deployment "~/bots/update_ping_pong.sh"

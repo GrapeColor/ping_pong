@@ -1,5 +1,4 @@
-Host <Host name>
+Host deployment
   HostName <Host adress>
   User <User name>
   Port <Port number>
-

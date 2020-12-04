@@ -25,4 +25,4 @@ jobs:
           " > ~/.ssh/enviroment
 
       - name: Update bot
-        run: ssh raspberrypi "/home/discord/bots/update_ping_pong.sh"
+        run: ssh deployment "/home/discord/bots/update_ping_pong.sh"

@@ -19,15 +19,11 @@ jobs:
           config: ${{ secrets.CONFIG }}
 
       - name: Set enviroments of SSH
-        env:
-          PING_PONG_TOKEN: ${{ secrets.PING_PONG_TOKEN }}
         run: |
-          for e in $(env); do
+          for e in $(secrets); do
             k=$(echo $e | cut -d= -f1)
             v=$(echo $e | sed 's/^.*=//')
-            if [ "x$k" = "x${k#GITHUB_}" ]; then
-              echo "export $k='$v'" >>~/.ssh/enviroment
-            fi
+            echo $k=$v >>~/.ssh/enviroment
           done
         # run: "echo -e \"\
         #   PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\

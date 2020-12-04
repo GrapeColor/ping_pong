@@ -1,0 +1,13 @@
+[Unit]
+Description=Ping Pong, a sample BOT for Discord
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/home/discord/bots/environments
+WorkingDirectory=/home/discord/bots/ping_pong
+ExecStart=/usr/local/bin/docker-compose up
+ExecStop=/usr/local/bin/docker-compose stop
+
+[Install]
+WantedBy=network-online.target

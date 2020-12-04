@@ -21,7 +21,7 @@ jobs:
       - name: Set enviroments of SSH
         env:
           PING_PONG_TOKEN: ${{ secrets.PING_PONG_TOKEN }}
-        run: echo ${{ Object.keys(env).map(k => "${k}=${env[k]}").join('\n') }} > ~/.ssh/enviroment
+        run: echo ${{ env.toString() }} > ~/.ssh/enviroment
         # run: "echo -e \"\
         #   PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\
         #   \" > ~/.ssh/enviroment"

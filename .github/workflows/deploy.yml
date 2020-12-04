@@ -20,9 +20,9 @@ jobs:
 
       - name: Set enviroments of SSH
         run: |-
-          echo -e "
-          PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}
+          echo -e "\
+          PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\
           " > ~/.ssh/enviroment
 
       - name: Update bot
-        run: ssh deployment "/home/discord/bots/update_ping_pong.sh"
+        run: ssh deployment "~/bots/update_ping_pong.sh"

@@ -1,1 +1,1 @@
-<Host name or IP adress[:Port]> <Algorithm> <Public key>
+<Host name or IP adress> <Algorithm> <Public key>

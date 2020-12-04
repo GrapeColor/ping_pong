@@ -19,12 +19,14 @@ jobs:
           config: ${{ secrets.CONFIG }}
 
       - name: Set enviroments of SSH
-        run: "echo -e \"\
-          PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\
-          \" > ~/.ssh/enviroment"
+        env:
+          PING_PONG_TOKEN: ${{ secrets.PING_PONG_TOKEN }}
+        # run: "echo -e \"\
+        #   PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}\\n\
+        #   \" > ~/.ssh/enviroment"
 
-      - name: Check enviroment file
-        run: cat ~/.ssh/enviroment
+      - name: Check enviroment
+        run: echo ${{ env }}
 
       # - name: Update bot
       #   run: ssh deployment "~/bots/update_ping_pong.sh"

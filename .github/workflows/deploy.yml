@@ -1,4 +1,3 @@
-  
 name: Deploy
 
 on:
@@ -15,9 +14,15 @@ jobs:
       - name: Install SSH
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           config: ${{ secrets.CONFIG }}
+
+      - name: Set enviroments of SSH
+        run: |-
+          echo -e "
+          PING_PONG_TOKEN=${{ secrets.PING_PONG_TOKEN }}
+          " > ~/.ssh/enviroment
 
       - name: Update bot
         run: ssh raspberrypi "/home/discord/bots/update_ping_pong.sh"

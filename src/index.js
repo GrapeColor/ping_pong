@@ -3,7 +3,9 @@ import { Client, Intents } from 'discord.js';
 const bot = new Client({ ws: { intents: Intents.NON_PRIVILEGED } });
 
 bot.on('message', message => {
-  if (message.content = 'ping!') message.channel.send('pong!');
+  if (!message.author.bot && message.content === 'ping!')
+    message.channel.send('pong!')
+      .catch(console.error);
 });
 
 bot.on('ready', () => {

@@ -7,4 +7,4 @@ RUN npm i
 
 COPY . .
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "node", "src/index.js" ]

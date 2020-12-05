@@ -20,6 +20,9 @@ bot.on('ready', () => {
     console.info('Ping Pong has logged out of Discord.');
   });
 
+  process.on('SIGTERM', () => process.exit(0));
+  process.on('SIGINT',  () => process.exit(0));
+
   bot.user?.setPresence({
     activity: {
       type: 'PLAYING',

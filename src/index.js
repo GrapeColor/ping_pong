@@ -18,7 +18,6 @@ bot.on('ready', () => {
   process.on('exit', () => {
     bot.destroy();
     console.info('Ping Pong has logged out of Discord.');
-    process.exit(0);
   });
 
   process.on('SIGTERM', () => process.exit(0));

@@ -13,8 +13,12 @@ const twitter = new Twitter({
 const bot = new Client({ ws: { intents: Intents.NON_PRIVILEGED } });
 
 bot.on('ready', () => {
-  process.on('exit', bot.destroy);
   console.info('Ping Pong has logged in to Discord.');
+
+  process.on('exit', () => {
+    bot.destroy();
+    console.info('Ping Pong has logged out of Discord.');
+  });
 
   bot.user?.setPresence({
     activity: {

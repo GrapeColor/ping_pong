@@ -1,7 +1,7 @@
-#!/bin/sh -x
+#!/bin/sh
 
 sudo service ping_pong stop
-echo "Ping Pong has stopped"
+echo "Ping Pong has stopped."
 echo "----------------------------------------------------------------"
 
 cd ~/bots/ping_pong
@@ -17,7 +17,7 @@ echo "----------------------------------------------------------------"
 docker-compose up --no-start
 echo "----------------------------------------------------------------"
 
-echo "Ping Pong has completed the update"
+echo "Ping Pong has completed the update."
 
 sudo service ping_pong start
-echo "Ping Pong has started"
+echo "Ping Pong has started."

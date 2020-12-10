@@ -22,4 +22,4 @@ echo "----------------------------------------------------------------"
 
 docker image prune -f
 echo "----------------------------------------------------------------"
-echo "# Remove unused images of Docker."
+echo "# Removed an unused images of Docker."
